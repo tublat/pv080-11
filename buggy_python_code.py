@@ -6,7 +6,7 @@ import flask
 
 
 def transcode_file(filename):
-    command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)
+    command = 'ffmpeg -i \'{source}\' output_file.mpg'.format(source=filename)
     subprocess.call(command, shell=True)  # a bad idea!
 
 

@@ -7,13 +7,11 @@ import flask
 
 def transcode_file(filename):
     command = 'ffmpeg -i \'{source}\' output_file.mpg'.format(source=filename)
-    subprocess.call(command, shell=True)  # a bad idea!
+    subprocess.call(command)  # a bad idea!
 
 
 def checker(user):
     assert user.is_admin, 'user does not have access'
-    # secure code...
-
 
 class RunBinSh:
     def __reduce__(self):

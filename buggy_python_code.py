@@ -4,38 +4,26 @@ import subprocess
 import base64
 import flask
 
-"""
-    Very useful function.
-"""
+
 def transcode_file(filename):
     command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)
     subprocess.call(command, shell=True)  # a bad idea!
 
 
-"""
-    Another very useful function.
-"""
 def checker(user):
     assert user.is_admin, 'user does not have access'
     # secure code...
 
 
-"""
-    Very useful class.
-"""
 class RunBinSh:
     def __reduce__(self):
         return (subprocess.Popen, (('/bin/sh',),))
 
-"""
-    My favourite function.
-"""
+
 def import_urlib_version(version):
     exec("import urllib%s as urllib" % version)
 
-"""
-    Decorator flex.
-"""
+
 @app.route('/')
 def index():
     module = flask.request.args.get("module")
